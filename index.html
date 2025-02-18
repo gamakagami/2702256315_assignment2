@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semesta Medika Dashboard</title>
+<link rel="stylesheet" href="rawr.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">Semesta Medika</div>
+            <div class="nav-item active">Dashboard</div>
+            <div class="nav-item">Tickets</div>
+            <div class="nav-item">Notification</div>
+            <div class="nav-item">Settings</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button id="menuToggle" style="background: none; border: none; cursor: pointer; font-size: 24px;">☰</button>
+                    <h1>Home</h1>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <span>Individual Profile -></span>
+                    <div id="profileIcon" style="width: 32px; height: 32px; background-color: #e5e7eb; border-radius: 50%; cursor: pointer;"></div>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search tickets, devices or issues">
+                <select class="status-filter">
+                    <option>Status: All</option>
+                </select>
+            </div>
+
+            <!-- Tickets Section -->
+            <div class="tickets-section">
+                <h2 style="margin-bottom: 15px;">Your Tickets</h2>
+                <table class="tickets-table">
+                    <thead>
+                        <tr>
+                            <th>Ticket ID</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Date Created</th>
+                            <th>Last Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#12345</td>
+                            <td>MRI Machine Calibration</td>
+                            <td><span class="status-badge">Pending</span></td>
+                            <td>2024-02-09</td>
+                            <td>2 days ago</td>
+                        </tr>
+                        <tr>
+                            <td>#12346</td>
+                            <td>MRI Machine Calibration</td>
+                            <td><span class="status-badge">Pending</span></td>
+                            <td>2024-02-09</td>
+                            <td>2 days ago</td>
+                        </tr>
+                        <tr>
+                            <td>#12347</td>
+                            <td>MRI Machine Calibration</td>
+                            <td><span class="status-badge">Pending</span></td>
+                            <td>2024-02-09</td>
+                            <td>2 days ago</td>
+                        </tr>
+                        <tr>
+                            <td>#12348</td>
+                            <td>MRI Machine Calibration</td>
+                            <td><span class="status-badge">Pending</span></td>
+                            <td>2024-02-09</td>
+                            <td>2 days ago</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Cards Section -->
+            <div class="cards-section">
+                <div class="card">
+                    <div class="card-icon">+</div>
+                    <h3>Create New Ticket</h3>
+                    <p>Report a new equipment issue or support request</p>
+                    <button class="btn">Open Ticket</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Support Resources</h3>
+                    <p>Access manuals, guides, and troubleshooting docs</p>
+                    <button class="btn">View Resources</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📞</div>
+                    <h3>Emergency Support</h3>
+                    <p>24/7 technical support for critical issues</p>
+                    <button class="btn">Contact Support</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <div class="form-group">
+                <h3>Group Name: Moggers</h3>
+                <br>
+                <h3>Members:</h3>
+                <h5> 1. Adrian Nugroho Basuki (L4AC) (2702298210)<br>
+                    2. Gabriel Anderson (L4AC) (2702256315)<br>
+                    3. Jonathan Leewin (L4AC) (2702319455)<br>
+                    4. Justin Hadinata (L4AC) (2702298236)
+                <br></h5><br>
+                <h3>3 Projects I have done in previous semesters:</h3>
+                <h5> 1. Data Structure Project<br>
+                    <p>A system that analyzes and manipulates various data structures to evaluate and determine the most efficient data structure for storing and managing character-based data</p>
+                    <p>Repo link: <a href="https://github.com/gamakagami/DSA-Char-DB">https://github.com/gamakagami/DSA-Char-DB</a></p>
+                   <br> 2. OOP Project<br>
+                    <p>A board game consisting of 3 simple fun games where the winner is decided by playing TicTacToe</p>
+                    <p>Repo link: <a href="https://github.com/gamakagami/The-Gam-Game">https://github.com/gamakagami/The-Gam-Game</a></p><br>
+                    3. HCI Project<br>
+                <p>A caretaker website with various functions and information</p>
+                <p>Repo link: <a href="https://github.com/gamakagami/Imissher-Project">https://github.com/gamakagami/Imissher-Project</a></p></h5>
+            
+                <!-- Rating System -->
+                <div class="rating">
+                    <br><h3>Programing Experience:</h3>
+                    <div class="stars">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <p id="ratingValue">Rating: 0/5</p>
+                </div>
+            </div>
+            <div class="form-group"><h3>Final Project Title: Semesta Medika</h3><br>
+            <p>Description: A help desk ticketing system for a hospital in jakarta</p></div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="rawr.js">
+       
+    </script>
+</body>
+</html>
